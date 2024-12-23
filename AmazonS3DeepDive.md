@@ -34,12 +34,14 @@ I/O is not left on the table. S3 constantly moves data arround to keep them bala
 
 New racks are filled in with existing data instead of just obsorbing new traffic. 
 
-## Designing decorrelated systems
+## Designing Decorrelated Systems
 Assigning buckets to their storrage. 
+
 **Simple Solution**
 * Assign a user a physical drive for their bucket and put/get your bucket from there.
+
 *Problems*
-* you need a backup so you have to go to more than one drive.
+* You need a backup so you have to go to more than one drive.
 * Your storage however now is tied to your physical hardware if you are large enought to have your own drive. 
 * If you are small you have to share your drive with others. 
 
