@@ -62,11 +62,15 @@ From an S3 perspective...
 * Elastic means any s3 cusomer shold be able to use every drive in our fleet on demand.
 * Its not just drives that shuffle shards, the DNS of putting/get requests are sent to different servers for processing.
 
-* * POWER OF TWO
+## Power Of Two Random Choices
+If you have a bunch of jobs you need to assign to a bunch of workers a powerful way to load balance is to randomly pick two from the list of workers and go with the one which is more optimal. This will yield a large reduction in the maximumload for the system over just choosing one. Any more than that will also see some reduction but it will only be by a constant factor. 
 
-*If you have a list of drives which have a level of fullness pick two random drives and use the better of the two.
+See [The Power of Two Random Choices: A Survey of Techniques and Results](https://www.eecs.harvard.edu/~michaelm/postscripts/handbook2001.pdf) for more information.
 
-Shuffle Sharding on the AWS builders library has more information on this.
+In S3 they use this to balance drives:
+* If you have a list of drives which have a level of fullness pick two random drives and use the better of the two.
+
+Most likely Amazon uses this in many places and could be the reason you randomly get bad requests which fail at times. Something to keep in mind.
 
 ## Engineering for failure is engineering for velocity
 At scale, failures are a fact of life.
