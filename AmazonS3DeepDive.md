@@ -79,7 +79,7 @@ How do you know if a system has failed? - S3 is constantly scanning the drives t
 
 ### Erasure coding.
 
-Replication is a imple way to tolerate faults - both individual drives and entire Availability Zones.
+Replication is a simple way to tolerate faults - both individual drives and entire Availability Zones.
 This however requires multiple copies which means something takes a ridiculous amount of memory to store.
 
 Erasure coding uses math to split the object into shards and create extra parity shards; the object can be rebuilt from any K of the shards.
