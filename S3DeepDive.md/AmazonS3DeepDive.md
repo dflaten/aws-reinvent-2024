@@ -63,9 +63,9 @@ From an S3 perspective...
 * Its not just drives that shuffle shards, the DNS of putting/get requests are sent to different servers for processing.
 
 ## Power Of Two Random Choices
-If you have a bunch of jobs you need to assign to a bunch of workers a powerful way to load balance is to randomly pick two from the list of workers and go with the one which is more optimal. This will yield a large reduction in the maximumload for the system over just choosing one. Any more than that will also see some reduction but it will only be by a constant factor. 
+If you have a bunch of jobs you need to assign to a bunch of workers a powerful way to load balance is to randomly pick two from the list of workers and go with the one which is more optimal. This will yield a large reduction in the maximumload for the system over just choosing one. Any more than that will also see some reduction but it will only be by a constant factor.
 
-See [The Power of Two Random Choices: A Survey of Techniques and Results](https://www.eecs.harvard.edu/~michaelm/postscripts/handbook2001.pdf) for more information.
+See [The Power of Two Random Choices: A Survey of Techniques and Results](https://www.eecs.harvard.edu/~michaelm/postscripts/handbook2001.pdf) for detailed information.
 
 In S3 they use this to balance drives:
 * If you have a list of drives which have a level of fullness pick two random drives and use the better of the two.
