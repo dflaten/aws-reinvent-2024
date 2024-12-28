@@ -19,6 +19,7 @@ YOu can optimize:
 
 ![K6 Testing](k6.png)
 
+TODO: Add detailed instructions on setting up and using K6 on AWS.
 
 1. Quick overview: This will display statistics about successful and failed requests. Here, 6% of the requests we sent received a successful response (HTTP 200)
 2. Statistics about the request duration in milliseconds (ms). Overall, our requests had an average latency of 149.15ms
