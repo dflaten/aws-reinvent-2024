@@ -15,8 +15,9 @@ YOu can optimize:
 
 ## K6 - Load testing
 
+[Github for K6](https://github.com/grafana/k6)
+
 ![K6 Testing](k6.png)
-<img src="k6.png" width="50" height="80">
 
 
 1. Quick overview: This will display statistics about successful and failed requests. Here, 6% of the requests we sent received a successful response (HTTP 200)
