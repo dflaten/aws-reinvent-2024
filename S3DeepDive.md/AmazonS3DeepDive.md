@@ -46,7 +46,7 @@ Assigning buckets to their storage.
 * Your storage however now is tied to your physical hardware if you are large enought to have your own drive.
 * If you are small you have to share your drive with others.
 
-**Shuffle Sharding**
+### Shuffle Sharding
 [Builders Library](https://aws.amazon.com/builders-library/workload-isolation-using-shuffle-sharding/)
 
 * When you purposefully move requests/jobs from one requester to different workers, you do not allow them to be correlated.
@@ -61,6 +61,11 @@ From an S3 perspective...
 * When you purposefully move a job into data into different drives, you don't allow them to be correlated.
 * Elastic means any s3 cusomer shold be able to use every drive in our fleet on demand.
 * Its not just drives that shuffle shards, the DNS of putting/get requests are sent to different servers for processing.
+
+#### Applications Elsewhere
+
+You can use shuffle sharding to route traffic to different hosts in a Load Balancer. This demo provides a good
+example. [Shuffle Sharding Load Balancer](https://github.com/aws-samples/shuffle-sharding-demo-app)
 
 ## Power Of Two Random Choices
 If you have a bunch of jobs you need to assign to a bunch of workers a powerful way to load balance is to randomly pick two from the list of workers and go with the one which is more optimal. This will yield a large reduction in the maximumload for the system over just choosing one. Any more than that will also see some reduction but it will only be by a constant factor.
@@ -84,4 +89,6 @@ This however requires multiple copies which means something takes a ridiculous a
 
 Erasure coding uses math to split the object into shards and create extra parity shards; the object can be rebuilt from any K of the shards.
 
-Any 5 of these shards is enough to rebuild the object, with only 1.8x overhead.
+![Erasure Coding](erasure-coding.png "Erasure Coding")
+
+Any 3 of these shards is enough to rebuild the object, with only 1.8x overhead.
