@@ -14,7 +14,10 @@ YOu can optimize:
 * (something else i missed)
 
 ## K6 - Load testing
-![](k6.png)
+
+![K6 Testing](k6.png)
+<img src="k6.png" width="50" height="80">
+
 
 1. Quick overview: This will display statistics about successful and failed requests. Here, 6% of the requests we sent received a successful response (HTTP 200)
 2. Statistics about the request duration in milliseconds (ms). Overall, our requests had an average latency of 149.15ms
