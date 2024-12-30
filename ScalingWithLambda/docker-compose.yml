@@ -1,0 +1,10 @@
+services:
+  k6:
+    build:
+      context: k6
+      dockerfile: Dockerfile
+
+  lambda:
+    build:
+      context: lambda
+      dockerfile: Dockerfile
