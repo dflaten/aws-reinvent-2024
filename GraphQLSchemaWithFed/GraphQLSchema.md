@@ -1,5 +1,5 @@
 # GraphQL Schema with Federation
-BWP 304: Fast evolving GraphQL schema with federation.
+[BWP 304: Fast evolving GraphQL schema with federation.](https://www.youtube.com/watch?v=fmpQsbKMQ7E)
 
 ## Introduction
 GraphQL uses the [federation pattern](https://graphql.com/learn/federated-architecture/) for application building. You have across your
@@ -8,7 +8,7 @@ GraphQL schema. The federation architecture comes together when you combine all 
 
 ## Schema Change problem
 
-```
+```graphql
 type Product {
    title: String
    price: Price
@@ -19,7 +19,7 @@ type Product {
 ```
 
 Adding fields is backwards compatabile:
-```
+```graphql
 type Product {
    title: String
    price: Price
@@ -68,6 +68,9 @@ Projection Config
 Used to figure out what data it should return using the projection config.
 
 ## GraphQL federation
+
+![](FederatedGraphQL.png)
+
 ```
 GraphQLAPI -> Product
                 -> Inventory
