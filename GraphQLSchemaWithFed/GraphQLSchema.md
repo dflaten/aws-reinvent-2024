@@ -1,5 +1,10 @@
-# GraphQL schema with federation
-BWP 304: Fast eveolving GraphQL schema with federation.
+# GraphQL Schema with Federation
+BWP 304: Fast evolving GraphQL schema with federation.
+
+## Introduction
+GraphQL uses the [federation pattern](https://graphql.com/learn/federated-architecture/) for application building. You have across your
+system many services, each with their own function and focus. They all combine to make up the entire application. Each service has its
+GraphQL schema. The federation architecture comes together when you combine all these schemas into a single GraphQL API.
 
 ## Schema Change problem
 
@@ -30,7 +35,7 @@ GraphQL has a strong opinion on not doing versioning. It provides alternative ap
 
 If you have a small amount of clients with small number of changes you can just evolve the schema.
 
-If you don't youcan create new schemas and and endpoints. (once a year once every two years ).
+If you don't you can create new schemas and and endpoints. (once a year once every two years ).
 
 For a more changing API you can do a Schema Projection.
 
@@ -38,7 +43,7 @@ For a more changing API you can do a Schema Projection.
 
 Example:
 
-```
+```graphql
 type Product {
    title: String
    price: Price
@@ -63,11 +68,13 @@ Projection Config
 Used to figure out what data it should return using the projection config.
 
 ## GraphQL federation
-GraphQLAPI -> Product
-                       -> Inventory
-                       -> Order
-
 ```
+GraphQLAPI -> Product
+                -> Inventory
+           -> Order
+```
+
+```graphql
 extend type Product {
    inventory: Inventory
 }
