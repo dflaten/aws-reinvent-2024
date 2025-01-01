@@ -6,12 +6,12 @@ Lambda Concurrency
 
 Concurrency =  Invocations (in RPS) x Duration (in ms)
 
-Long running functiosn require ore concurrency.
-Concurrency is not infinite but there are burst and account limits on concurrency.
+Long running functions require more concurrency.
+Concurrency is not infinite, there are burst and account limits on concurrency.
 
-YOu can optimize:
-* for the duration of the lambda
-* (something else i missed)
+You can optimize:
+* for the duration of the Lambda
+* the memory used by the Lambda
 
 ## K6 - Load testing
 
@@ -27,6 +27,8 @@ TODO: Add detailed instructions on setting up and using K6 on AWS.
 4. The total amount of requests and RPS.
 
 ## Optimize Lambda
+[AWS Documentation on the subject](https://aws.amazon.com/blogs/compute/operating-lambda-performance-optimization-part-1/)
+
 ![](optimize_lambda.png)
 
 
