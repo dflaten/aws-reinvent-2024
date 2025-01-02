@@ -71,12 +71,6 @@ Used to figure out what data it should return using the projection config.
 
 ![](FederatedGraphQL.png)
 
-```
-GraphQLAPI -> Product
-                -> Inventory
-           -> Order
-```
-
 ```graphql
 extend type Product {
    inventory: Inventory
