@@ -112,7 +112,7 @@ resource "aws_lambda_function" "test" {
 # Build and push Lambda container image
 resource "null_resource" "lambda_image" {
   triggers = {
-    python_file = filemd5("${path.module}/lambda/app.py")
+    python_file = filemd5("${path.module}/lambda/handler.py")
     docker_file = filemd5("${path.module}/lambda/Dockerfile")
   }
 
