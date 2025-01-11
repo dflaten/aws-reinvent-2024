@@ -1,24 +1,19 @@
 FROM public.ecr.aws/lambda/python:3.12
 
 # Install tar and other required tools
-RUN microdnf install -y tar gzip
-# Install uv
-RUN curl -LsSf https://astral.sh/uv/install.sh | sh && \
-    mv /root/.local/bin/uv /usr/local/bin/uv
+COPY --from=ghcr.io/astral-sh/uv:0.5.17 /uv /bin/uv
+
+ENV UV_CACHE_DIR=/tmp/.uv_cache
 
 # Copy dependency files
-COPY pyproject.toml uv.lock ${LAMBDA_TASK_ROOT}/
+COPY pyproject.toml .
+COPY uv.lock .
+COPY handler.py .
 
 # Install dependencies using uv sync with lockfile
-RUN cd ${LAMBDA_TASK_ROOT} && uv sync
-
-# Copy application code
-COPY handler.py ${LAMBDA_TASK_ROOT}
-
-# Set environment variables
-ENV PYTHONPATH="${LAMBDA_TASK_ROOT}"
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
+RUN uv pip install --system -Ue .
+# This verifies the function has all the dependencies it needs to run.
+RUN python3 handler.py
 
 # Set the CMD to your handler
 CMD [ "handler.lambda_handler" ]
