@@ -13,7 +13,7 @@ need to define the infrastructure code but you won't need to solve the problems 
 Your serverless functions should not be used to solely move data from one service to another. If you are you are
 probably not utilizing something available within the source service correctly.
 
-#### : API Gateway and Dynamodb
+#### API Gateway and Dynamodb
 
 Many operations can be done via API Gateway directly without the need of putting a compute like Lambda in between them.
 
