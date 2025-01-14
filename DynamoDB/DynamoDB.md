@@ -1,9 +1,10 @@
 # DynamoDb
 
-DAT404: Advanced data modeling with Amazon DynamoDB - Alex DeBrie
+[2024 DAT404: Advanced data modeling with Amazon DynamoDB - Alex DeBrie](https://www.youtube.com/watch?v=hjqrDqVaiw0)
+[2023 talk on Dynamodb](https://www.youtube.com/watch?v=PVUofrFiS_A)
+[2023 Deep Dive on Dynamodb](https://www.youtube.com/watch?v=ld-xoehkJuU)
 
-Previous talks on this talk on it if I want to go see more.
-
+[dynamodb-shell](https://github.com/awslabs/dynamodb-shell)
 ## Key Characteristics
 
 - Thanks to it being hosted you don't have to worry about load blancers, storage nodes,
