@@ -2,3 +2,4 @@
 */.ropeproject
 */__pycache__
 .zed
+.DS_STORE
